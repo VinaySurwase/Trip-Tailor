@@ -77,11 +77,11 @@ The **Personalized Travel Itinerary Generator** is a web-based application that 
 
 ## Contributors
 This project is a group assignment for the **CS2003 DBMS** course and is limited to the following contributors:
-- **Vinay Surwase** (GitHub: @VinaySurwase)
-- **Taanvi Khevaria** (GitHub: @taanvi2205)
-- **M. Gowthami** (GitHub: )
-- **Om Parate** (GitHub: )
-- **Raja Kumar** (GitHub: @raja5583)
+- [Vinay Surwase](https://github.com/VinaySurwase)
+- [Taanvi Khevaria](https://github.com/taanvi2205)
+- M. Gowthami
+- Om Parate
+- [Raja Kumar](https://github.com/raja5583)
 
 ---
 
