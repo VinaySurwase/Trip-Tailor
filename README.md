@@ -80,7 +80,7 @@ This project is a group assignment for the **CS2003 DBMS** course and is limited
 - [Vinay Surwase](https://github.com/VinaySurwase)
 - [Taanvi Khevaria](https://github.com/taanvi2205)
 - M. Gowthami
-- Om Parate
+- [Om Parate](https://github.com/omparate7)
 - [Raja Kumar](https://github.com/raja5583)
 
 ---
