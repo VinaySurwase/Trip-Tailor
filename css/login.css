@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e7f2f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    background-color: white;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.form-box {
+    padding: 50px;
+    width: 600px;
+    text-align: center;
+    height: 550px;
+}
+
+#wlcm{
+    padding-top: 150px;
+    font-size: 40px;
+}
+
+#member{
+    font-style: italic;
+}
+
+.sign-in-box {
+    background-color: #21215E;
+    color: white;
+}
+
+.sign-in-box h2 {
+    font-size: 24px;
+}
+
+.sign-in-box p {
+    margin: 20px 0;
+}
+
+.sign-in-btn {
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    padding: 10px 30px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: lighter;
+    background-color: #2e2c72;
+}
+
+.sign-in-btn:hover {
+    background-color: white;
+    color: #2e2c72;
+}
+
+.create-account-box {
+    background-color: #ffffff;
+    /* display: flex; */
+    /* justify-content: center; */
+    align-items: center;
+}
+
+.create-account-box h2 {
+    font-size: 24px;
+    color: #21215E;
+}
+
+.create-account-box form {
+    display: flex;
+    flex-direction: column;
+}
+
+.create-account-box input {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f1f0f0;
+    border: #f1f0f0;
+}
+
+#account{
+    font-size: 40px;
+}
+
+.sign-up-btn {
+    background-color: #21215E;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 30px;
+    cursor: pointer;   
+    width: 90px;
+    margin-left: 200px;
+    margin-top: 10px;
+}
+
+.details{
+    width: 300px;
+    margin-left: 100px;
+    margin-top: 9px;
+}
+
+.sign-up-btn:hover {
+    background-color: #21215E;
+}
+
