@@ -1,0 +1,285 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e7f2f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    background-color: white;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    width: 94%;
+    height: auto;
+}
+
+.sidebar {
+    width: 25%;
+    background-color: #21215E;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+}
+
+.sidebar h2 {
+    margin-bottom: 40px;
+    padding-top: 20p;
+    font-size: 3vw;
+    padding-top: 20%;
+}
+
+.sidebar h3 {
+    display: flex;
+    justify-content: flex-start;
+    font-size: 1.5vw;
+    width: 80%;
+}
+
+.user-tools {
+    list-style: none;
+    padding: 0;
+}
+
+.user-tools li {
+    margin: 20px 0;
+    width: 100%;
+}
+
+.user-tools li a {
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    padding: 10px 30px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-weight: lighter;
+    text-decoration: none;
+    font-size: 1.15vw;
+    width: 100%;
+    display: block;
+}
+
+.user-tools li a:hover {
+    background-color: white;
+    color: #2e2c72;
+    text-decoration: none;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: white;
+    border-radius: 20px;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: flex-end;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    height: 35%;
+    width: 100%;
+}
+
+.header h1 {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 2.75vw;
+    /* font-size: 36px; */
+    color: #21215E;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.user-profile span {
+    margin-right: 10px;
+    font-size: 1.5vw;
+}
+
+.user-image {
+    width: 50px;
+    height: 50px;
+    background-color: #ccc;
+    border-radius: 50%;
+}
+
+.destinations {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 8%;
+    margin-bottom: 8%;
+    row-gap: 3vw;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+.destination-card {
+    width: 80%;
+    height: auto;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.destination-card img {
+    width: 100%;
+    height: 12.5vw ;
+    object-fit: cover;
+    display: block;
+    position: relative;
+}
+
+.destination-card p {
+    padding: 10px;
+    text-align: center;
+    font-size: 16px;
+    color: white;
+    display: block;
+}
+
+.text-overlay {
+    position: absolute;
+    bottom: 2.5%;
+    left: 2.5%;
+    transform: none;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); 
+    font-size: 24px;
+    font-weight: bold;
+    text-align: left;
+    z-index: 1; 
+}
+
+.calendar-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+}
+
+.header1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.calendar-title {
+    font-size: 1.9vw;
+    margin: 0;
+    color: #21215E;
+}
+
+.nav-btn {
+    background-color: white;
+    color: #21215E;
+    padding: 10px 15px;
+    border: 1px solid #21215E;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.nav-btn:hover {
+    background-color: #21215E;
+    color: white;
+}
+
+.calendar {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.calendar th, .calendar td {
+    padding: 10px;
+    text-align: center;
+    border-top: 1px solid #ddd;
+}
+
+.calendar th {
+    background-color: #f9f9f9;
+    font-weight: bold;
+}
+
+.calendar td {
+    height: 50px;
+}
+
+.calendar td.empty {
+    background-color: #f9f9f9;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+#close-modal {
+    float: right;
+    cursor: pointer;
+}
+
+.modal-content h3 {
+    margin-top: 0;
+}
+
+#month-select, #year-select {
+    margin: 10px 0;
+    padding: 5px;
+    width: 100%;
+}
+
+#confirm-selection {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #21215E;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+#confirm-selection:hover {
+    background-color: #21215E;
+}
+
