@@ -10,8 +10,10 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: max-content;
     margin: 0;
+    padding-top: 3%;
+    padding-bottom: 3%;
 }
 
 .container {
@@ -21,6 +23,7 @@ body {
     border-radius: 20px;
     width: 94%;
     height: auto;
+    overflow: hidden;
 }
 
 .sidebar {
@@ -35,7 +38,7 @@ body {
 
 .sidebar h2 {
     margin-bottom: 40px;
-    padding-top: 20p;
+    padding-top: 20px;
     font-size: 3vw;
     padding-top: 20%;
 }
@@ -178,6 +181,7 @@ body {
     margin: 0 auto;
     padding: 20px;
     /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+    height: auto;
 }
 
 .header1 {
@@ -211,12 +215,14 @@ body {
 .calendar {
     width: 100%;
     border-collapse: collapse;
+    height: auto;
 }
 
 .calendar th, .calendar td {
     padding: 10px;
     text-align: center;
     border-top: 1px solid #ddd;
+    height: auto;
 }
 
 .calendar th {
@@ -283,3 +289,28 @@ body {
     background-color: #21215E;
 }
 
+@media (max-width: 768px) {
+    .calendar-container {
+        max-width: 100%;
+        padding: 1rem;
+        height: auto;
+    }
+
+    .calendar th, .calendar td {
+        padding: 0.5rem;
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .calendar-container {
+        max-width: 100%;
+        padding: 0.625rem;
+        height: auto;
+    }
+
+    .calendar th, .calendar td {
+        padding: 0.3125rem;
+        height: auto;
+    }
+}
