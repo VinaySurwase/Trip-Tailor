@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 28, 2024 at 06:05 AM
+-- Generation Time: Oct 28, 2024 at 11:29 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -32,8 +32,8 @@ USE `trip_tailor`;
 DROP TABLE IF EXISTS `admin`;
 CREATE TABLE `admin` (
   `AdminID` int(11) NOT NULL,
-  `Name` varchar(100) DEFAULT NULL,
-  `Password` varchar(100) DEFAULT NULL
+  `Name` varchar(100) NOT NULL,
+  `Password` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -45,13 +45,13 @@ CREATE TABLE `admin` (
 DROP TABLE IF EXISTS `attraction`;
 CREATE TABLE `attraction` (
   `AttractionID` int(11) NOT NULL,
-  `AttractionName` varchar(100) DEFAULT NULL,
+  `AttractionName` varchar(100) NOT NULL,
   `AttractionType` varchar(100) DEFAULT NULL,
   `ActivityType` varchar(100) DEFAULT NULL,
-  `EntryFee` decimal(10,2) DEFAULT NULL,
+  `EntryFee` decimal(10,2) DEFAULT 0.00,
   `Description` text DEFAULT NULL,
   `DestinationID` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ;
 
 --
 -- Dumping data for table `attraction`
@@ -92,9 +92,6 @@ INSERT INTO `attraction` (`AttractionID`, `AttractionName`, `AttractionType`, `A
 (32, 'Mall Road', 'Shopping Street', 'Shopping', 0.00, 'A popular shopping street in Shimla.', 11),
 (33, 'Jakhoo Temple', 'Temple', 'Religious', 50.00, 'A temple dedicated to Lord Hanuman, situated on Jakhoo Hill.', 11),
 (34, 'The Ridge', 'Public Square', 'Sightseeing', 0.00, 'A large open space offering stunning views of the mountains.', 11),
-(35, 'Radhanagar Beach', 'Beach', 'Water Sports', 0.00, 'One of the most beautiful beaches in Asia.', 12),
-(36, 'Cellular Jail', 'Monument', 'Historical Tour', 50.00, 'A colonial prison used during India\'s freedom struggle.', 12),
-(37, 'Ross Island', 'Island', 'Sightseeing', 100.00, 'An abandoned island known for its ruins.', 12),
 (38, 'Tiger Hill', 'Viewpoint', 'Sightseeing', 50.00, 'A famous viewpoint offering panoramic views of the Himalayas.', 13),
 (39, 'Batasia Loop', 'Train Route', 'Sightseeing', 20.00, 'A scenic railway loop with a war memorial.', 13),
 (40, 'Padmaja Naidu Zoological Park', 'Zoo', 'Wildlife Viewing', 100.00, 'A zoological park home to various endangered species.', 13),
@@ -219,9 +216,9 @@ INSERT INTO `attraction` (`AttractionID`, `AttractionName`, `AttractionType`, `A
 DROP TABLE IF EXISTS `destination`;
 CREATE TABLE `destination` (
   `DestinationID` int(11) NOT NULL,
-  `DestinationName` varchar(100) DEFAULT NULL,
+  `DestinationName` varchar(100) NOT NULL,
   `DestinationType` varchar(100) DEFAULT NULL,
-  `DestinationLocation` varchar(100) DEFAULT NULL
+  `DestinationLocation` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -240,7 +237,6 @@ INSERT INTO `destination` (`DestinationID`, `DestinationName`, `DestinationType`
 (9, 'Varanasi', 'Religious', 'Uttar Pradesh'),
 (10, 'Udaipur', 'Cultural', 'Rajasthan'),
 (11, 'Coorg', 'Hill Station', 'Karnataka'),
-(12, 'Shimla', 'Hill Station', 'Himachal Pradesh'),
 (13, 'Andaman & Nicobar', 'Beach', 'Andaman Islands'),
 (14, 'Darjeeling', 'Hill Station', 'West Bengal'),
 (15, 'Amritsar', 'Religious', 'Punjab'),
@@ -291,9 +287,9 @@ DROP TABLE IF EXISTS `expense`;
 CREATE TABLE `expense` (
   `ExpenseID` int(11) NOT NULL,
   `DestinationID` int(11) DEFAULT NULL,
-  `category` varchar(100) DEFAULT NULL,
-  `costamount` decimal(10,2) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `category` varchar(100) NOT NULL,
+  `costamount` decimal(10,2) NOT NULL
+) ;
 
 --
 -- Dumping data for table `expense`
@@ -323,8 +319,6 @@ INSERT INTO `expense` (`ExpenseID`, `DestinationID`, `category`, `costamount`) V
 (21, 10, 'Travel', 7000.00),
 (22, 11, 'Accommodation', 7000.00),
 (23, 11, 'Travel', 7000.00),
-(24, 12, 'Accommodation', 20000.00),
-(25, 12, 'Travel', 15000.00),
 (26, 13, 'Accommodation', 6000.00),
 (27, 13, 'Travel', 6000.00),
 (28, 14, 'Accommodation', 5000.00),
@@ -414,7 +408,7 @@ CREATE TABLE `feedback` (
   `Description` text DEFAULT NULL,
   `Rating` int(11) DEFAULT NULL,
   `DestinationID` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ;
 
 --
 -- Dumping data for table `feedback`
@@ -444,9 +438,9 @@ CREATE TABLE `itinerary` (
   `ItineraryID` int(11) NOT NULL,
   `UserID` int(11) DEFAULT NULL,
   `DestinationID` int(11) DEFAULT NULL,
-  `StartDate` date DEFAULT NULL,
-  `EndDate` date DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `StartDate` date NOT NULL,
+  `EndDate` date NOT NULL
+) ;
 
 --
 -- Dumping data for table `itinerary`
@@ -454,7 +448,6 @@ CREATE TABLE `itinerary` (
 
 INSERT INTO `itinerary` (`ItineraryID`, `UserID`, `DestinationID`, `StartDate`, `EndDate`) VALUES
 (1, 1, 1, '2025-01-01', '2025-01-07'),
-(2, 2, 2, '2025-01-10', '2025-01-15'),
 (3, 3, 3, '2025-01-05', '2025-01-10'),
 (4, 4, 4, '2025-01-12', '2025-01-20'),
 (5, 5, 5, '2025-01-15', '2025-01-22'),
@@ -484,8 +477,6 @@ INSERT INTO `itineraryattraction` (`ItineraryID`, `AttractionID`) VALUES
 (1, 1),
 (1, 2),
 (1, 3),
-(2, 4),
-(2, 5),
 (3, 6),
 (3, 7),
 (3, 8),
@@ -514,9 +505,9 @@ DROP TABLE IF EXISTS `report`;
 CREATE TABLE `report` (
   `ReportID` int(11) NOT NULL,
   `Description` text DEFAULT NULL,
-  `TotalSpent` decimal(10,2) DEFAULT NULL,
+  `TotalSpent` decimal(10,2) DEFAULT 0.00,
   `ItineraryID` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ;
 
 --
 -- Dumping data for table `report`
@@ -524,7 +515,6 @@ CREATE TABLE `report` (
 
 INSERT INTO `report` (`ReportID`, `Description`, `TotalSpent`, `ItineraryID`) VALUES
 (1, 'Spent a week in the hills, amazing views and experiences!', 12000.00, 1),
-(2, 'Explored the city, enjoyed shopping and food.', 8000.00, 2),
 (3, 'Relaxed at the beach, great weather!', 5000.00, 3),
 (4, 'Cultural trip, learned a lot about the history.', 15000.00, 4),
 (5, 'Adventure activities, thrilling experience!', 20000.00, 5),
@@ -543,15 +533,15 @@ INSERT INTO `report` (`ReportID`, `Description`, `TotalSpent`, `ItineraryID`) VA
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
   `UserID` int(11) NOT NULL,
-  `Name` varchar(100) DEFAULT NULL,
-  `Email` varchar(100) DEFAULT NULL,
-  `Password` varchar(100) DEFAULT NULL,
+  `Name` varchar(100) NOT NULL,
+  `Email` varchar(100) NOT NULL,
+  `Password` varchar(100) NOT NULL,
   `Phone` varchar(100) DEFAULT NULL,
   `age` int(11) DEFAULT NULL,
   `gender` varchar(100) DEFAULT NULL,
   `Pref_DestinationType` varchar(100) DEFAULT NULL,
   `Pref_ActivityType` varchar(100) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ;
 
 --
 -- Dumping data for table `user`
@@ -559,7 +549,6 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`UserID`, `Name`, `Email`, `Password`, `Phone`, `age`, `gender`, `Pref_DestinationType`, `Pref_ActivityType`) VALUES
 (1, 'John Doe', 'john@example.com', 'password123', '1234567890', 30, 'Male', 'Hill Station', 'Adventure'),
-(2, 'John Doe', 'john@example.com', 'password123', '1234567890', 28, 'Male', 'Hill Station', 'Adventure'),
 (3, 'Jane Smith', 'jane@example.com', 'password123', '0987654321', 25, 'Female', 'Metro City', 'Shopping'),
 (4, 'Alice Brown', 'alice@example.com', 'password123', '1122334455', 30, 'Female', 'Hill Station', 'Relaxation'),
 (5, 'Bob Johnson', 'bob@example.com', 'password123', '2233445566', 35, 'Male', 'Metro City', 'Adventure'),
@@ -585,35 +574,36 @@ ALTER TABLE `admin`
 --
 ALTER TABLE `attraction`
   ADD PRIMARY KEY (`AttractionID`),
-  ADD KEY `attraction_ibfk_1` (`DestinationID`);
+  ADD KEY `fk_destination_id` (`DestinationID`);
 
 --
 -- Indexes for table `destination`
 --
 ALTER TABLE `destination`
-  ADD PRIMARY KEY (`DestinationID`);
+  ADD PRIMARY KEY (`DestinationID`),
+  ADD UNIQUE KEY `DestinationName` (`DestinationName`);
 
 --
 -- Indexes for table `expense`
 --
 ALTER TABLE `expense`
   ADD PRIMARY KEY (`ExpenseID`),
-  ADD KEY `expense_ibfk_1` (`DestinationID`);
+  ADD KEY `fk_destination_expense` (`DestinationID`);
 
 --
 -- Indexes for table `feedback`
 --
 ALTER TABLE `feedback`
   ADD PRIMARY KEY (`FeedbackID`),
-  ADD KEY `feedback_ibfk_1` (`DestinationID`);
+  ADD KEY `fk_destination_feedback` (`DestinationID`);
 
 --
 -- Indexes for table `itinerary`
 --
 ALTER TABLE `itinerary`
   ADD PRIMARY KEY (`ItineraryID`),
-  ADD KEY `itinerary_ibfk_1` (`UserID`),
-  ADD KEY `itinerary_ibfk_2` (`DestinationID`);
+  ADD KEY `fk_destination_itinerary` (`DestinationID`),
+  ADD KEY `fk_user_itinerary` (`UserID`);
 
 --
 -- Indexes for table `itineraryattraction`
@@ -627,13 +617,15 @@ ALTER TABLE `itineraryattraction`
 --
 ALTER TABLE `report`
   ADD PRIMARY KEY (`ReportID`),
-  ADD KEY `report_ibfk_1` (`ItineraryID`);
+  ADD KEY `fk_itinerary_report` (`ItineraryID`);
 
 --
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
-  ADD PRIMARY KEY (`UserID`);
+  ADD PRIMARY KEY (`UserID`),
+  ADD UNIQUE KEY `Email` (`Email`),
+  ADD UNIQUE KEY `Phone` (`Phone`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -649,7 +641,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `attraction`
 --
 ALTER TABLE `attraction`
-  MODIFY `AttractionID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=152;
+  MODIFY `AttractionID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `destination`
@@ -661,31 +653,31 @@ ALTER TABLE `destination`
 -- AUTO_INCREMENT for table `expense`
 --
 ALTER TABLE `expense`
-  MODIFY `ExpenseID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=102;
+  MODIFY `ExpenseID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `feedback`
 --
 ALTER TABLE `feedback`
-  MODIFY `FeedbackID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `FeedbackID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `itinerary`
 --
 ALTER TABLE `itinerary`
-  MODIFY `ItineraryID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `ItineraryID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `report`
 --
 ALTER TABLE `report`
-  MODIFY `ReportID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `ReportID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `UserID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `UserID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Constraints for dumped tables
