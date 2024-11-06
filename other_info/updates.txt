@@ -1,6 +1,0 @@
-from backend to frontend :
-        please add photos and correct activity type name to activitytype.html file . see the below Screenshots
-        Trip-Tailor\other_info\Screenshot 2024-11-06 152401.png and Trip-Tailor\other_info\Screenshot 2024-11-06 152335.png 
-
-
-        also i renamed snow to adventure in destination.html file so please change the photo 
