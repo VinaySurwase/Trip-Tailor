@@ -1,113 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Personalize It</title>
-    <link rel="stylesheet" href="css/destinationType.css">
-</head>
-<body>
+    <link rel="stylesheet" href="css/destinationType.css" />
+  </head>
+  <body>
     <div class="container">
-        <div class="personalize-box">
-            <div id="heading">
-                <h2 id="personalise">Personalize It</h2>
-            <p id="select">Select your preferred Activity type</p>
-            </div>
-            <div class="grid">
-                <div class="grid-item">
-                    <div class="slideshow">
-                        <img src="img/image1.jpg" class="slides" style="display: block;">
-                        <div class="text-overlay">Beaches</div>
-                    </div>
-                </div>
-                
-                <div class="grid-item">
-                    <div class="slideshow">
-                        <img src="img/image2.jpg" class="slides" style="display: block;">
-                        <div class="text-overlay">Hill Stations</div>
-                    </div>
-                </div>
-                
-                <div class="grid-item">
-                    <div class="slideshow">
-                        <img src="img/image3.jpg" class="slides" style="display: block;">
-                        <div class="text-overlay">Heritage</div>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="grid">
-                <div class="grid-item">
-                    <div class="slideshow">
-                        <img src="img/image4.jpg" class="slides" style="display: block;">
-                        <div class="text-overlay">Snow</div>
-                    </div>
-                </div>
-                
-                <div class="grid-item">
-                    <div class="slideshow">
-                        <img src="img/image5.jpg" class="slides" style="display: block;">
-                        <div class="text-overlay">Nature</div>
-                    </div>
-                </div>
-                
-                <div class="grid-item">
-                    <div class="slideshow">
-                        <img src="img/image6.jpg" class="slides" style="display: block;">
-                        <div class="text-overlay">Spritual</div>
-                    </div>
-                </div>
-            </div>
-            <div class="grid">
-                <div class="grid-item">
-                    <div class="slideshow">
-                        <img src="img/image7.jpg" class="slides" style="display: block;">
-                        <div class="text-overlay">Religious</div>
-                    </div>
-                </div>
-                
-                <div class="grid-item">
-                    <div class="slideshow">
-                        <img src="img/image8.jpg" class="slides" style="display: block;">
-                        <div class="text-overlay">Cultural</div>
-                    </div>
-                </div>
-                
-                <div class="grid-item">
-                    <div class="slideshow">
-                        <img src="img/image9.jpg" class="slides" style="display: block;">
-                        <div class="text-overlay">Dessert</div>
-                    </div>
-                </div>
-            </div>
-            <div class="grid">
-                <div class="grid-item">
-                    <div class="slideshow">
-                        <img src="img/image10.jpg" class="slides" style="display: block;">
-                        <div class="text-overlay">Historical</div>
-                    </div>
-                </div>
-                
-                <div class="grid-item">
-                    <div class="slideshow">
-                        <img src="img/image11.jpg" class="slides" style="display: block;">
-                        <div class="text-overlay">Wildlife</div>
-                    </div>
-                </div>
-                
-                <div class="grid-item">
-                    <div class="slideshow">
-                        <img src="img/image12.jpg" class="slides" style="display: block;">
-                        <div class="text-overlay">Cities</div>
-                    </div>
-                </div>
-            </div>
-            <div class="nextButton">
-                <a href="#" class="next-btn">Next ></a>
-            </div>
+      <div class="personalize-box">
+        <div id="heading">
+          <h2 id="personalise">Personalize It</h2>
+          <p id="select">Select your preferred Activity type</p>
         </div>
+        <div class="grid">
+          <div class="grid-item">
+            <div class="slideshow">
+              <a href="php/activityType.php?activity=Hiking">   <!-- add this anchor tag in all divs in this format and write activity = {desired activity(see from other_info folder)} --> 
+                <img
+                  src="img/image1.jpg"
+                  class="slides"
+                  style="display: block"
+                />
+                <div class="text-overlay">Hiking</div>
+              </a>
+            </div>
+          </div>
+
+          <div class="grid-item">
+            <div class="slideshow">
+              <img src="img/image2.jpg" class="slides" style="display: block" />
+              <div class="text-overlay">Hill Stations</div>
+            </div>
+          </div>
+
+          <div class="grid-item">
+            <div class="slideshow">
+              <img src="img/image3.jpg" class="slides" style="display: block" />
+              <div class="text-overlay">Heritage</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid">
+          <div class="grid-item">
+            <div class="slideshow">
+              <img src="img/image4.jpg" class="slides" style="display: block" />
+              <div class="text-overlay">Snow</div>
+            </div>
+          </div>
+
+          <div class="grid-item">
+            <div class="slideshow">
+              <img src="img/image5.jpg" class="slides" style="display: block" />
+              <div class="text-overlay">Nature</div>
+            </div>
+          </div>
+
+          <div class="grid-item">
+            <div class="slideshow">
+              <img src="img/image6.jpg" class="slides" style="display: block" />
+              <div class="text-overlay">Spritual</div>
+            </div>
+          </div>
+        </div>
+        <div class="grid">
+          <div class="grid-item">
+            <div class="slideshow">
+              <img src="img/image7.jpg" class="slides" style="display: block" />
+              <div class="text-overlay">Religious</div>
+            </div>
+          </div>
+
+          <div class="grid-item">
+            <div class="slideshow">
+              <img src="img/image8.jpg" class="slides" style="display: block" />
+              <div class="text-overlay">Cultural</div>
+            </div>
+          </div>
+
+          <div class="grid-item">
+            <div class="slideshow">
+              <img src="img/image9.jpg" class="slides" style="display: block" />
+              <div class="text-overlay">Dessert</div>
+            </div>
+          </div>
+        </div>
+        <div class="grid">
+          <div class="grid-item">
+            <div class="slideshow">
+              <img
+                src="img/image10.jpg"
+                class="slides"
+                style="display: block"
+              />
+              <div class="text-overlay">Historical</div>
+            </div>
+          </div>
+
+          <div class="grid-item">
+            <div class="slideshow">
+              <img
+                src="img/image11.jpg"
+                class="slides"
+                style="display: block"
+              />
+              <div class="text-overlay">Wildlife</div>
+            </div>
+          </div>
+
+          <div class="grid-item">
+            <div class="slideshow">
+              <img
+                src="img/image12.jpg"
+                class="slides"
+                style="display: block"
+              />
+              <div class="text-overlay">Cities</div>
+            </div>
+          </div>
+        </div>
+        <div class="nextButton">
+          <a href="#" class="next-btn">Next ></a>
+        </div>
+      </div>
     </div>
     <script src="scripts/destinationType.js"></script>
-</body>
+  </body>
 </html>
