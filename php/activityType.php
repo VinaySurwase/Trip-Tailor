@@ -17,7 +17,7 @@ if (isset($_GET['activity'])) {
     $stmt->close();
 
     // Redirect to the dashboard 
-    header("Location: ../dashboard.html");
+    header("Location: ../dashboard.php");
     exit();
 } else {
     echo "No activity selected.";

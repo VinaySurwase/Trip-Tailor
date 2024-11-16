@@ -1,28 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
-    <link rel="stylesheet" href="css/login.css">
-</head>
-<body>
+    <link rel="stylesheet" href="css/login.css" />
+  </head>
+  <body>
     <div class="container">
-        <div class="form-box sign-up-box">
-            <h2 id="wlcm">Welcome Back!</h2>
-            <p id="member">No account?</p>
-            <button class="sign-up-btn">Sign Up</button>
-        </div>
+      <div class="form-box sign-up-box">
+        <h2 id="wlcm">Welcome Back!</h2>
+        <p id="member">No account?</p>
+        <button class="sign-up-btn"><a href="SignUp.html">Sign Up </a></button>
+      </div>
 
-        <div class="form-box account-box">
-            <h2 id="account">Sign In</h2>
-            <form>
-                <input type="email" placeholder="Email" required class="details">
-                <input type="password" placeholder="Password" required class="details">
-                <button type="submit" class="sign-in-btn">Login</button>
-            </form>
-            <a href="#" class="forgot-password">Forgot Password !</a>
-        </div>
+      <div class="form-box account-box">
+        <h2 id="account">Sign In</h2>
+        
+        <!-- Display error message if authentication fails -->
+        <?php if (isset($error_message)): ?>
+          <p style="color: red; text-align: center;"><?php echo $error_message; ?></p>
+        <?php endif; ?>
+        
+        <!-- Form to capture email and password -->
+        <form method="POST" action="php/login.php">
+          <input type="email" name="email" placeholder="Email" required class="details" />
+          <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            required
+            class="details"
+          />
+          <button type="submit" class="sign-in-btn">Login</button>
+        </form>
+        <a href="#" class="forgot-password">Forgot Password !</a>
+      </div>
     </div>
-</body>
+  </body>
 </html>
