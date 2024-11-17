@@ -1,0 +1,169 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+  
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e7f2f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: max-content;
+    margin: 0;
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+
+  
+.container {
+    display: flex;
+    background-color: white;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    width: 94%;
+    height: auto;
+    min-height: 90vh;
+    overflow: hidden;
+}
+
+.sidebar {
+    width: 25%;
+    background-color: #21215E;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+}
+
+.sidebar h2 {
+    margin-bottom: 40px;
+    padding-top: 20px;
+    font-size: 3vw;
+    padding-top: 20%;
+}
+
+.sidebar h3 {
+    display: flex;
+    justify-content: flex-start;
+    font-size: 1.5vw;
+    width: 80%;
+}
+  
+.user-tools {
+    list-style: none;
+    padding: 0;
+}
+
+.user-tools li {
+    margin: 20px 0;
+    width: 100%;
+}
+
+.user-tools li a {
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    padding: 10px 30px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-weight: lighter;
+    text-decoration: none;
+    font-size: 1.15vw;
+    width: 100%;
+    display: block;
+}
+
+.user-tools li a:hover {
+    background-color: white;
+    color: #2e2c72;
+    text-decoration: none;
+}
+  
+.main-content {
+    width: 75%;
+    background-color: #ffffff;
+    padding: 20px;
+}
+  
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-left: 3vw;
+    padding-right: 3vw;
+    padding-top: 3vh;
+}
+  
+header h1 {
+    font-size: 2rem;
+    color: #333;
+}
+  
+.new-journey {
+    padding: 10px 20px;
+    background-color: #E5F4F5;
+    color: #4A6572;
+    border: none;
+    border-radius: 10vh;
+    cursor: pointer;
+}
+  
+.new-journey:hover {
+    background-color: #def5f7;
+}
+  
+.travel-plans {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(200px, 1fr));
+    gap: 2vw;
+    padding-left: 3vw;
+    padding-right: 3vw;
+    padding-top: 3vh;
+}
+  
+@media (max-width: 1024px) {
+    .travel-plans {
+        grid-template-columns: repeat(2, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .travel-plans {
+        grid-template-columns: 1fr;
+    }
+}
+
+.plan {
+    background-color: #E5F4F5;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+.plan:hover {
+    background-color: #def5f7;
+}
+
+.plan a{
+    text-decoration: none;
+}
+
+
+.plan h3 {
+    font-size: 1.4rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+  
+.plan p {
+    color: #555;
+    font-size: 0.9rem;
+    padding-top: 0.7vh;
+    padding-bottom: 0.7vh;
+    display: flex;
+    align-content: flex-start;
+}
