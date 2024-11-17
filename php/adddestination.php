@@ -16,8 +16,3 @@ if ($itineraryId) {
 } else {
     die("Error: Unable to insert into Itinerary.");
 }
-
-
-// // Redirect to attractions
-// header("Location: attractionlist.php?destinationId=$destinationId");
-?>

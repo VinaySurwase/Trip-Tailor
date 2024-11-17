@@ -1,11 +1,11 @@
 <?php
 session_start();
-include 'connection.php'; 
+include 'connection.php';
 
 if (isset($_GET['activity'])) {
     // Get the selected activity from the URL
     $selectedActivity = $_GET['activity'];
-    
+
     // Store it in session for future use
     $_SESSION['Pref_ActivityType'] = $selectedActivity;
 
@@ -22,4 +22,3 @@ if (isset($_GET['activity'])) {
 } else {
     echo "No activity selected.";
 }
-?>

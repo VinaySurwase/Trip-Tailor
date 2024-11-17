@@ -1,4 +1,3 @@
-
 <?php
 session_start();
 
@@ -25,12 +24,14 @@ $conn->close();
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/dashboard.css">
     <title>Dashboard</title>
 </head>
+
 <body>
     <div class="container">
         <!-- Sidebar -->
@@ -62,7 +63,7 @@ $conn->close();
                 </div>
             </div>
         </div>
-        
+
         <div class="main-content">
             <div class="header">
                 <h1>Welcome,</h1>
@@ -71,7 +72,7 @@ $conn->close();
                     <div class="user-image"></div>
                 </div>
             </div>
-            
+
             <div class="calendar-container">
                 <div class="header1">
                     <h2 class="calendar-title">Calendar</h2>
@@ -93,7 +94,7 @@ $conn->close();
                         <!-- Dates displayed here -->
                     </tbody>
                 </table>
-        
+
                 <!-- Modal for selecting month and year -->
                 <div id="modal" class="modal">
                     <div class="modal-content">
@@ -114,5 +115,5 @@ $conn->close();
 
     <script src="scripts/dashboard.js"></script>
 </body>
-</html>
 
+</html>
