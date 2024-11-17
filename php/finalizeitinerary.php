@@ -12,12 +12,9 @@ if (isset($_SESSION['itineraryId'])) {
         $insertQuery = "INSERT INTO ItineraryAttraction (ItineraryID, AttractionID) VALUES ($itineraryId, $attractionId)";
         $conn->query($insertQuery);
     }
-    
-
 } else {
     die("Error: Itinerary ID not found.");
 }
 
 
 header("Location: ../journeydate.html");
-?>

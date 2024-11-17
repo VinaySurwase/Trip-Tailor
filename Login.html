@@ -16,15 +16,23 @@
 
       <div class="form-box account-box">
         <h2 id="account">Sign In</h2>
-        
+
         <!-- Display error message if authentication fails -->
         <?php if (isset($error_message)): ?>
-          <p style="color: red; text-align: center;"><?php echo $error_message; ?></p>
+        <p style="color: red; text-align: center">
+          <?php echo $error_message; ?>
+        </p>
         <?php endif; ?>
-        
+
         <!-- Form to capture email and password -->
         <form method="POST" action="php/login.php">
-          <input type="email" name="email" placeholder="Email" required class="details" />
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            required
+            class="details"
+          />
           <input
             type="password"
             name="password"

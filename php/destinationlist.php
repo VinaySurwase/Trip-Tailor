@@ -6,7 +6,7 @@ if (!isset($_SESSION['UserID'])) {
     header("Location: login.php");
     exit();
 }
- // Assuming UserID is stored in session after login
+// Assuming UserID is stored in session after login
 $userId = $_SESSION['UserID'];
 
 // Query user preferences
@@ -24,9 +24,11 @@ $destinationResult = $conn->query($destinationQuery);
 
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Destinations</title>
 </head>
+
 <body>
     <h1>Destinations</h1>
     <button onclick="window.location.href='destinationlist.php?sort=1'">Sort by Preferred Type</button>
@@ -50,4 +52,5 @@ $destinationResult = $conn->query($destinationQuery);
         <?php endwhile; ?>
     </table>
 </body>
+
 </html>

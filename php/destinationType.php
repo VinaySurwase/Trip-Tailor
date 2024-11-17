@@ -5,7 +5,7 @@ include 'connection.php'; // Assuming you have connection.php set up to connect 
 if (isset($_GET['destination'])) {
     // Get the selected destination from the URL
     $selectedDestination = $_GET['destination'];
-    
+
     // Store it in session for future use
     $_SESSION['Pref_DestinationType'] = $selectedDestination;
 
@@ -22,4 +22,3 @@ if (isset($_GET['destination'])) {
 } else {
     echo "No destination selected.";
 }
-?>
