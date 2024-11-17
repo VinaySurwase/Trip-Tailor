@@ -40,7 +40,7 @@ $conn->close();
             <h3>User Tools</h3>
             <ul class="user-tools">
                 <li><a href="php/destinationlist.php">Explore and Select destinations</a></li>
-                <li><a href="#">Manage your Itinerary</a></li>
+                <li><a href="Itinerary.php">Manage your Itinerary</a></li>
                 <li><a href="#">Report and Feedback</a></li>
                 <li><a href="#">Profile Management</a></li>
             </ul>
