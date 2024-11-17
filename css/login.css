@@ -60,6 +60,8 @@ body {
     cursor: pointer;
     font-weight: lighter;
     background-color: #2e2c72;
+    text-decoration: none;
+    font-size: 14px;
 }
 
 .sign-up-btn:hover {
