@@ -49,24 +49,29 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <html>
 <head>
     <title>Edit Profile</title>
+    <link rel="stylesheet" type="text/css" href="../css/edit_profile.css">
 </head>
 <body>
-    <h2>Edit Your Profile</h2>
-    <form method="POST" action="">
-        <label for="Name">Username:</label>
-        <input type="text" name="Name" id="Name" value="<?php echo htmlspecialchars($user['Name']); ?>" required>
-        <br><br>
+    <div class="form-container">
+        <h2>Edit Your Profile</h2>
+        <form method="POST" action="">
+            <label for="Name">Username:</label>
+            <input type="text" name="Name" id="Name" value="<?php echo htmlspecialchars($user['Name']); ?>" required>
+            <br><br>
 
-        <label for="Email">Email:</label>
-        <input type="email" name="Email" id="Email" value="<?php echo htmlspecialchars($user['Email']); ?>" required>
-        <br><br>
+            <label for="Email">Email:</label>
+            <input type="email" name="Email" id="Email" value="<?php echo htmlspecialchars($user['Email']); ?>" required>
+            <br><br>
 
-        <label for="Phone">Phone:</label>
-        <input type="text" name="Phone" id="Phone" value="<?php echo htmlspecialchars($user['Phone']); ?>" required>
-        <br><br>
+            <label for="Phone">Phone:</label>
+            <input type="text" name="Phone" id="Phone" value="<?php echo htmlspecialchars($user['Phone']); ?>" required>
+            <br><br>
 
-        <button type="submit">Update Profile</button>
-    </form>
-    <p><h3>your profile got updated successfully!</h3></p>
+            <button type="submit">Update Profile</button>
+        </form>
+
+        <!-- Back Button -->
+        <a href="javascript:history.back();" class="back-button">Back</a>
+    </div>
 </body>
 </html>

@@ -86,7 +86,7 @@ $conn->close();
         <?php else: ?>
           <?php foreach ($itineraries as $plan): ?>
             <div class="plan">
-              <a href="#">
+              <a href="itineray_details.php?ItineraryID=<?= urlencode($plan['ItineraryID']) ?>">
                 <h3><?= htmlspecialchars($plan['DestinationName']) ?></h3>
                 <p><?= htmlspecialchars(date("d-m-Y", strtotime($plan['StartDate']))) ?> to <?= htmlspecialchars(date("d-m-Y", strtotime($plan['EndDate']))) ?></p>
                 <p>Expected: Rs <?= htmlspecialchars(number_format($plan['ExpectedCost'])) ?></p>

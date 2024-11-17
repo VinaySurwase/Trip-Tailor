@@ -24,20 +24,23 @@ if ($result->num_rows > 0) {
     exit();
 }
 ?>
-
 <!DOCTYPE html>
 <html>
 <head>
     <title>Profile Management</title>
+    <link rel="stylesheet" type="text/css" href="../css/profilemanagement.css">
 </head>
 <body>
-    <h2>Your Profile</h2>
-    <p><strong>Username:</strong> <?php echo htmlspecialchars($user['Name']); ?></p>
-    <p><strong>Email:</strong> <?php echo htmlspecialchars($user['Email']); ?></p>
-    <p><strong>Phone:</strong> <?php echo htmlspecialchars($user['Phone']); ?></p>
-    <p><strong>Age:</strong> <?php echo htmlspecialchars($user['Age']); ?></p>
-    <p><strong>Gender:</strong> <?php echo htmlspecialchars($user['Gender']); ?></p>
+    <div class="profile-container">
+        <h2>Your Profile</h2>
+        <p><strong>Username:</strong> <?php echo htmlspecialchars($user['Name']); ?></p>
+        <p><strong>Email:</strong> <?php echo htmlspecialchars($user['Email']); ?></p>
+        <p><strong>Phone:</strong> <?php echo htmlspecialchars($user['Phone']); ?></p>
+        <p><strong>Age:</strong> <?php echo htmlspecialchars($user['Age']); ?></p>
+        <p><strong>Gender:</strong> <?php echo htmlspecialchars($user['Gender']); ?></p>
 
-    <a href="edit_profile.php">Edit Profile</a>
+        <a href="edit_profile.php">Edit Profile</a>
+        <a href="javascript:history.back();" class="back-button">Back</a>
+    </div>
 </body>
 </html>

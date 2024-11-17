@@ -7,35 +7,31 @@ if (!isset($_SESSION['UserID'])) {
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $userID = $_SESSION['UserID'];
     $itineraryID = $_POST['ItineraryID'];
-    $description = $_POST['Description'];
+    $reportDescription = $_POST['ReportDescription'];
     $totalSpent = $_POST['TotalSpent'];
 
-    // Validate that the selected itinerary belongs to the user
-    $validateSql = "
-        SELECT 1 
-        FROM itinerary 
-        WHERE ItineraryID = ? AND UserID = ?";
-    $validateStmt = $conn->prepare($validateSql);
-    $validateStmt->bind_param("ii", $itineraryID, $userID);
-    $validateStmt->execute();
-    $validateResult = $validateStmt->get_result();
-
-    if ($validateResult->num_rows > 0) {
-        // Insert report into the database
-        $insertSql = "
-            INSERT INTO report (ItineraryID, Description, TotalSpent) 
-            VALUES (?, ?, ?)";
-        $insertStmt = $conn->prepare($insertSql);
-        $insertStmt->bind_param("isd", $itineraryID, $description, $totalSpent);
-        if ($insertStmt->execute()) {
-            echo "Report submitted successfully!";
-        } else {
-            echo "Error submitting report: " . $conn->error;
-        }
-    } else {
-        echo "Invalid itinerary selection.";
+    if (empty($reportDescription) || empty($totalSpent)) {
+        die("All fields are required.");
     }
+
+    // Insert report into the database
+    $sqlInsertReport = "
+        INSERT INTO report (ItineraryID, Description, TotalSpent) 
+        VALUES (?, ?, ?)";
+    $stmt = $conn->prepare($sqlInsertReport);
+    $stmt->bind_param("isd", $itineraryID, $reportDescription, $totalSpent);
+
+    if ($stmt->execute()) {
+        echo "Report submitted successfully.";
+        echo "<br><a href='feedback_report.php'>Go Back</a>";
+    } else {
+        echo "Error submitting report: " . $stmt->error;
+    }
+
+    $stmt->close();
+    $conn->close();
+} else {
+    die("Invalid request method.");
 }
 ?>

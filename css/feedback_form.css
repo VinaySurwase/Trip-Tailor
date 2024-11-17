@@ -1,0 +1,212 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #e7f2f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+
+
+/* Container */
+.container {
+    /* display: flex;
+    background-color: white;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    width: 95%;
+    max-width: 1200px;
+    min-height: 90vh;
+    overflow: hidden; */
+    display: flex;
+    background-color: white;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    width: 94%;
+    height: auto;
+    min-height: 90vh;
+    overflow: hidden;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 25%;
+    background-color: #21215E;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border-radius: 20px ;
+}
+
+.sidebar h2 {
+    /* margin-bottom: 30px;
+    font-size: 2rem;
+    text-align: center; */
+    margin-bottom: 40px;
+    padding-top: 20px;
+    font-size: 3vw;
+    padding-top: 20%;
+}
+
+.sidebar h3 {
+    font-size: 1.5rem;
+    width: 100%;
+    /* text-align: center; */
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: flex-start;
+    font-size: 1.5vw;
+    width: 80%;
+}
+
+.user-tools {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    /* text-align: center; */
+}
+
+.user-tools li {
+    margin: 15px 0;
+}
+
+.user-tools li a {
+    display: block;
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-weight: lighter;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.user-tools li a:hover {
+    background-color: white;
+    color: #21215E;
+}
+
+/* Main Content */
+.main-content {
+    width: 75%;
+    background-color: #ffffff;
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 2rem;
+    color: #21215E;
+    margin-bottom: 5px;
+}
+
+header p {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Feedback and Report Forms */
+.form-feedback {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-feedback label {
+    font-size: 1rem;
+    color: #333;
+}
+
+.form-feedback textarea,
+.form-feedback input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    resize: vertical;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.form-feedback textarea {
+    min-height: 120px;
+}
+
+.form-feedback textarea:focus,
+.form-feedback input[type="number"]:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.form-feedback input[type="number"] {
+    max-width: 150px;
+    text-align: center;
+}
+
+.form-feedback button {
+    align-self: flex-start;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: white;
+    background-color: #21215E;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.form-feedback button:hover {
+    background-color: #007bff;
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        border-radius: 20px 20px 0 0;
+        text-align: center;
+    }
+
+    .main-content {
+        width: 100%;
+        padding: 20px;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+}

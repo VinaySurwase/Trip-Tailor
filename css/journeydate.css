@@ -108,53 +108,53 @@ header p {
     color: #333;
 }
   
-.travel-plans {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(200px, 1fr));
-    gap: 3vw;
-    padding-left: 3vw;
-    padding-right: 3vw;
-    padding-top: 3vh;
-}
-  
-@media (max-width: 1024px) {
-    .travel-plans {
-        grid-template-columns: repeat(2, minmax(200px, 1fr));
-    }
+
+/* Date Form */
+.form-dates {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-@media (max-width: 768px) {
-    .travel-plans {
-        grid-template-columns: 1fr;
-    }
-}
-
-.plan {
-    background-color: #E5F4F5;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-.plan:hover {
-    background-color: #def5f7;
-}
-
-.plan a{
-    text-decoration: none;
-}
-
-
-.plan h3 {
-    font-size: 1.4rem;
+.form-dates label {
+    font-size: 1.2rem;
     color: #333;
-    margin-bottom: 10px;
-    padding-top: 3vh;
+    font-weight: bold;
 }
-  
-.plan p {
-    color: #555;
-    font-size: 0.9rem;
-    padding-top: 0.7vh;
-    padding-bottom: 3vh;
+
+.form-dates input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.form-dates input:focus {
+    border-color: #007bff;
+    background-color: white;
+    outline: none;
+}
+ 
+.form-dates button {
+    align-self: flex-start;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: white;
+    background-color: #21215E;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.form-dates button:hover {
+    background-color: #007bff;
+    transform: scale(1.05);
 }

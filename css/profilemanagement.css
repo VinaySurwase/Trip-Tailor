@@ -1,0 +1,98 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e7f2f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container Styling */
+.profile-container {
+    background-color: white;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    padding: 20px 40px;
+    width: 40%;
+    min-height: 60vh;
+    text-align: center;
+}
+
+.profile-container h2 {
+    font-size: 2rem;
+    color: #21215E;
+    margin-bottom: 20px;
+}
+
+.profile-container p {
+    font-size: 1rem;
+    color: #333;
+    margin: 10px 0;
+    line-height: 1.5;
+}
+
+.profile-container a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: white;
+    background-color: #21215E;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.profile-container a:hover {
+    background-color: #007bff;
+    transform: scale(1.05);
+}
+/* Back Button Styling */
+.back-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #21215E;
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-left: 10px;
+}
+
+.back-button:hover {
+    background-color: #e0e0e0;
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .profile-container {
+        width: 80%;
+    }
+
+    .profile-container h2 {
+        font-size: 1.5rem;
+    }
+
+    .profile-container p {
+        font-size: 0.9rem;
+    }
+
+    .profile-container a {
+        font-size: 0.9rem;
+    }
+}

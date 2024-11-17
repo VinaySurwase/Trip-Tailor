@@ -1,16 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Journey Dates</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Journey Date</title>
+    <link rel="stylesheet" href="css/journeydate.css" />
   </head>
   <body>
-    <h1>Set Your Journey Dates</h1>
-    <form action="php/saveitinerary.php" method="POST">
-      <label>Start Date:</label>
-      <input type="date" name="StartDate" required />
-      <label>End Date:</label>
-      <input type="date" name="EndDate" required />
-      <button type="submit">Save</button>
-    </form>
+    <div class="container">
+      <div class="sidebar">
+        <h2>Trip Tailor</h2>
+        <h3>User Tools</h3>
+        <ul class="user-tools">
+          <li><a href="destinationlist.php">Explore and Select Destinations</a></li>
+          <li><a href="../Itinerary.php">Manage Your Itinerary</a></li>
+          <li><a href="feedback_report.php">Report and Feedback</a></li>
+          <li><a href="#">Profile Management</a></li>
+        </ul>
+      </div>
+      <main class="main-content">
+        <header>
+          <h1>Set Your Journey Dates</h1>
+        </header>
+        <form action="php/saveitinerary.php" method="POST" class="form-dates">
+          <label for="StartDate">Start Date:</label>
+          <input type="date" id="StartDate" name="StartDate" required />
+          <label for="EndDate">End Date:</label>
+          <input type="date" id="EndDate" name="EndDate" required />
+          <button type="submit">Save</button>
+        </form>
+      </main>
+    </div>
   </body>
 </html>
