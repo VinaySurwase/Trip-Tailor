@@ -27,9 +27,11 @@ $attractionResult = $conn->query($attractionQuery);
 
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Attractions</title>
 </head>
+
 <body>
     <h1>Attractions</h1>
     <button onclick="window.location.href='attractionlist.php?destinationId=<?= $destinationId ?>&sort=activity'">Sort by Preferred Activity</button>
@@ -57,4 +59,5 @@ $attractionResult = $conn->query($attractionQuery);
         <button type="submit">Save Selections</button>
     </form>
 </body>
+
 </html>
