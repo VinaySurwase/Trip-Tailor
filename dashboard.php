@@ -1,3 +1,28 @@
+
+<?php
+session_start();
+
+// Check if the user is logged in
+if (!isset($_SESSION['UserID'])) {
+    header("Location: login.php"); // Redirect to login if not authenticated
+    exit();
+}
+
+// Get UserID from the session
+$userId = $_SESSION['UserID'];
+
+
+include 'php/connection.php';
+// Fetch the user's name
+$stmt = $conn->prepare("SELECT Name FROM User WHERE UserID = ?");
+$stmt->bind_param("i", $userId);
+$stmt->execute();
+$result = $stmt->get_result();
+$userName = ($result->num_rows > 0) ? $result->fetch_assoc()['Name'] : "User";
+
+$stmt->close();
+$conn->close();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +38,7 @@
             <h2>Trip Tailor</h2>
             <h3>User Tools</h3>
             <ul class="user-tools">
-                <li><a href="#">Explore and Select destinations</a></li>
+                <li><a href="php/destinationlist.php">Explore and Select destinations</a></li>
                 <li><a href="#">Manage your Itinerary</a></li>
                 <li><a href="#">Report and Feedback</a></li>
                 <li><a href="#">Profile Management</a></li>
@@ -42,7 +67,7 @@
             <div class="header">
                 <h1>Welcome,</h1>
                 <div class="user-profile">
-                    <span>User Name</span>
+                    <span><?php echo htmlspecialchars($userName); ?></span>
                     <div class="user-image"></div>
                 </div>
             </div>
@@ -90,3 +115,4 @@
     <script src="scripts/dashboard.js"></script>
 </body>
 </html>
+
