@@ -1,0 +1,147 @@
+/* Reset default margin, padding, and box-sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f7f9fc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 2%;
+}
+
+/* Form container styling */
+.form-container {
+    background-color: #ffffff;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 480px;
+    text-align: center;
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Title styling */
+h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+/* Form label styling */
+label {
+    font-size: 1.1rem;
+    color: #333;
+    text-align: left;
+    display: block;
+    margin-bottom: 8px;
+}
+
+/* Input field styling */
+input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #333;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: #21215e;
+    background-color: #fff;
+}
+
+/* Button styling */
+button {
+    background-color: #21215e;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s ease;
+    margin-top: 15px;
+}
+
+button:hover {
+    background-color: #3a3a92;
+    transform: translateY(-3px);
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+/* Back button styling */
+.back-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #21215e;
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.back-button:hover {
+    background-color: #e0e0e0;
+    transform: scale(1.05);
+}
+
+.back-button:active {
+    background-color: #d4d4d4;
+    transform: scale(1);
+}
+
+/* Paragraph for success message */
+h3 {
+    font-size: 1.2rem;
+    color: #4caf50;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+/* Responsive styling for small devices */
+@media (max-width: 480px) {
+    .form-container {
+        padding: 20px;
+        max-width: 100%;
+    }
+
+    input,
+    button,
+    .back-button {
+        font-size: 1rem;
+        padding: 10px;
+    }
+}

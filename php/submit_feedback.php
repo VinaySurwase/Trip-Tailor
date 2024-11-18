@@ -31,6 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $insertStmt->bind_param("isi", $destinationID, $feedback, $rating);
         if ($insertStmt->execute()) {
             echo "Feedback submitted successfully!";
+            echo "<br><a href='feedback_report.php'>Go Back</a>";
         } else {
             echo "Error submitting feedback: " . $conn->error;
         }

@@ -8,22 +8,12 @@ if (!isset($_SESSION['UserID'])) {
 
 $userID = $_SESSION['UserID'];
 
-// Fetch destinations the user has traveled to
-$sqlDestinations = "
-    SELECT DISTINCT d.DestinationID, d.DestinationName 
+// Fetch user's itineraries
+$sqlItineraries = "
+    SELECT ItineraryID, StartDate, EndDate, d.DestinationName 
     FROM itinerary i
     INNER JOIN destination d ON i.DestinationID = d.DestinationID
     WHERE i.UserID = ?";
-$stmtDest = $conn->prepare($sqlDestinations);
-$stmtDest->bind_param("i", $userID);
-$stmtDest->execute();
-$resultDestinations = $stmtDest->get_result();
-
-// Fetch user's itineraries
-$sqlItineraries = "
-    SELECT ItineraryID, StartDate, EndDate 
-    FROM itinerary 
-    WHERE UserID = ?";
 $stmtItin = $conn->prepare($sqlItineraries);
 $stmtItin->bind_param("i", $userID);
 $stmtItin->execute();
@@ -33,49 +23,39 @@ $resultItineraries = $stmtItin->get_result();
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feedback and Reports</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Itineraries</title>
+  <link rel="stylesheet" href="../css/report.css">
 </head>
 <body>
-    <h1>Submit Feedback</h1>
-    <form method="POST" action="submit_feedback.php">
-        <label for="DestinationID">Select a destination:</label>
-        <select name="DestinationID" id="DestinationID" required>
-            <?php while ($row = $resultDestinations->fetch_assoc()): ?>
-                <option value="<?php echo $row['DestinationID']; ?>">
-                    <?php echo $row['DestinationName']; ?>
-                </option>
-            <?php endwhile; ?>
-        </select>
-        <br>
-        <label for="Feedback">Feedback:</label>
-        <textarea name="Feedback" id="Feedback" required></textarea>
-        <br>
-        <label for="Rating">Rating:</label>
-        <input type="number" name="Rating" id="Rating" min="1" max="5" required>
-        <br>
-        <button type="submit">Submit Feedback</button>
-    </form>
-
-    <h1>Submit Report</h1>
-    <form method="POST" action="submit_report.php">
-        <label for="ItineraryID">Select an itinerary:</label>
-        <select name="ItineraryID" id="ItineraryID" required>
-            <?php while ($row = $resultItineraries->fetch_assoc()): ?>
-                <option value="<?php echo $row['ItineraryID']; ?>">
-                    <?php echo "Itinerary " . $row['ItineraryID'] . " (From: " . $row['StartDate'] . " To: " . $row['EndDate'] . ")"; ?>
-                </option>
-            <?php endwhile; ?>
-        </select>
-        <br>
-        <label for="Description">Report Description:</label>
-        <textarea name="Description" id="Description" required></textarea>
-        <br>
-        <label for="TotalSpent">Total Spent:</label>
-        <input type="number" name="TotalSpent" id="TotalSpent" step="0.01" required>
-        <br>
-        <button type="submit">Submit Report</button>
-    </form>
+  <div class="container">
+    <div class="sidebar">
+      <h2>Trip Tailor</h2>
+      <h3>User Tools</h3>
+      <ul class="user-tools">
+        <li><a href="destinationlist.php">Explore and Select Destinations</a></li>
+        <li><a href="../Itinerary.php">Manage Your Itinerary</a></li>
+        <li><a href="feedback_report.php">Report and Feedback</a></li>
+        <li><a href="#">Profile Management</a></li>
+      </ul>
+    </div>
+    <main class="main-content">
+      <header>
+        <h1>Your Itineraries</h1>
+        <p>Select a trip to provide feedback or share your experience.</p>
+      </header>
+      <div class="travel-plans">
+        <?php while ($row = $resultItineraries->fetch_assoc()): ?>
+        <div class="plan">
+          <a href="feedback_form.php?ItineraryID=<?php echo $row['ItineraryID']; ?>">
+            <h3><?php echo $row['DestinationName']; ?></h3>
+            <p><?php echo $row['StartDate']; ?> to <?php echo $row['EndDate']; ?></p>
+          </a>
+        </div>
+        <?php endwhile; ?>
+      </div>
+    </main>
+  </div>
 </body>
 </html>
