@@ -108,7 +108,7 @@ body {
 }
 
 /* The Modal (background) */
-.modal {
+.trip-modal {
     display: none;
     position: fixed;
     z-index: 1;
@@ -120,7 +120,7 @@ body {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-.modal-content {
+.trip-modal .modal-content {
     background-color: white;
     margin: 15% auto;
     padding: 20px;
@@ -130,18 +130,18 @@ body {
     position: relative;
 }
 
-.modal-content h2 {
+.trip-modal .modal-content h2 {
     margin: 0;
     font-size: 24px;
     font-weight: bold;
 }
 
-.modal-content p {
+.trip-modal .modal-content p {
     margin: 10px 0;
     font-size: 16px;
 }
 
-.modal-content .remove-btn {
+.trip-modal .modal-content .remove-btn {
     background-color: white;
     color: #0957D0;
     border: none;
@@ -152,11 +152,11 @@ body {
     justify-self: end;
 }
 
-.modal-content .remove-btn:hover {
+.trip-modal .modal-content .remove-btn:hover {
     background-color: #EDF2FC;
 }
 
-.close {
+.trip-modal .close {
     position: absolute;
     top: 10px;
     right: 20px;

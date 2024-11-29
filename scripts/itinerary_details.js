@@ -1,12 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () {
     // Get the modal and its elements
-    var modal = document.getElementById("myModal");
-    var span = document.getElementsByClassName("close")[0];
+    var modal = document.getElementById("myTripModal");
+    var span = document.querySelector("#myTripModal .close");
     var modalTitle = document.getElementById("modal-title");
     var modalDescription = document.getElementById("modal-description");
     var modalFamous = document.getElementById("modal-famous");
     var modalEntryFee = document.getElementById("modal-entry-fee");
-    var removeBtn = document.querySelector(".remove-btn");
+    var removeBtn = document.querySelector("#myTripModal .remove-btn");
 
     // Get all cards
     var cards = document.getElementsByClassName("card");
