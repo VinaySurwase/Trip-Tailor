@@ -108,7 +108,7 @@ body {
 }
 
 /* The Modal (background) */
-.trip-modal {
+/* .trip-modal {
     display: none;
     position: fixed;
     z-index: 1;
@@ -162,4 +162,4 @@ body {
     right: 20px;
     font-size: 24px;
     cursor: pointer;
-}
+} */
