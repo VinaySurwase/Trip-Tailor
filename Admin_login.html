@@ -4,19 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
-    <link rel="stylesheet" href="css/login.css" />
+    <link rel="stylesheet" href="css/admin_login.css" />
   </head>
   <body>
     <div class="container">
       <div class="form-box sign-up-box">
         <h2 id="wlcm">Welcome Back!</h2>
-        <p id="member">No account?</p>
-        <a class="sign-up-btn" href="SignUp.html">Sign Up </a>
-        <p id="member"><a href="Admin_login.html">Admin Login</a></p>
+        <p id="member">Login as User</p>
+        <a class="sign-up-btn" href="Login.html">User Login</a>
       </div>
 
       <div class="form-box account-box">
-        <h2 id="account">Sign In</h2>
+        <h2 id="account">Login</h2>
 
         <!-- Display error message if authentication fails -->
         <?php if (isset($error_message)): ?>
@@ -26,13 +25,15 @@
         <?php endif; ?>
 
         <!-- Form to capture email and password -->
-        <form method="POST" action="php/login.php">
+        <form method="POST" action="php/admin_login.php">
           <input
-            type="email"
-            name="email"
-            placeholder="Email"
+            type="number"
+            name="number"
+            placeholder="Admin ID"
             required
             class="details"
+            inputmode="numeric"
+            pattern="[0-9]*"
           />
           <input
             type="password"
@@ -43,7 +44,7 @@
           />
           <button type="submit" class="sign-in-btn">Login</button>
         </form>
-        <a href="php/forgot_password.php" class="forgot-password">Forgot Password !</a>
+        <!-- <a href="#" class="forgot-password">Forgot Password !</a> -->
       </div>
     </div>
   </body>
