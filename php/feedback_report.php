@@ -38,7 +38,7 @@ $resultItineraries = $stmtItin->get_result();
         <li><a href="destinationlist.php">Explore and Select Destinations</a></li>
         <li><a href="../Itinerary.php">Manage your Itinerary</a></li>
         <li><a href="feedback_report.php">Report and Feedback</a></li>
-        <li><a href="#">Profile Management</a></li>
+        <li><a href="profile_management.php">Profile Management</a></li>
       </ul>
     </div>
     <main class="main-content">
