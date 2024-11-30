@@ -39,6 +39,7 @@ $conn->close();
             <h2>Trip Tailor</h2>
             <h3>User Tools</h3>
             <ul class="user-tools">
+                <li><a href="dashboard.php">Dashboard</a></li>
                 <li><a href="php/destinationlist.php">Explore and Select destinations</a></li>
                 <li><a href="Itinerary.php">Manage your Itinerary</a></li>
                 <li><a href="php/feedback_report.php">Report and Feedback</a></li>

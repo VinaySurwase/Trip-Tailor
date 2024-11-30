@@ -7,7 +7,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 // Include your database connection file
-include 'connection.php';
+include '../connection.php';
 
 // Check if the form is submitted
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $_SESSION['admin_name'] = $admin['Name'];
 
         // Redirect to a dashboard or home page
-        header("Location: ../admin_dashboard.html");
+        header("Location: ../../admin_pages/admin_dashboard.html");
         exit();
     } else {
         // Authentication failed

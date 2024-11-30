@@ -17,12 +17,11 @@ if (isset($_GET['delete'])) {
     $UserID = intval($_GET['delete']); // Get user ID from query string
     $deleteQuery = "DELETE FROM User WHERE UserID = $UserID";
     if ($conn->query($deleteQuery) === TRUE) {
-        echo "User deleted successfully.";
+        $message = "User deleted successfully.";
     } else {
-        echo "Error deleting user: " . $conn->error;
+        $message = "Error deleting user: " . $conn->error;
     }
 }
-
 // Fetch all users
 $query = "SELECT UserID, Name, Email, Pref_DestinationType, Pref_ActivityType FROM User";
 $result = $conn->query($query);
@@ -216,6 +215,12 @@ $result = $conn->query($query);
 
 <body>
     <h1>Manage Users</h1>
+    <?php
+    // Show delete message
+    if (isset($message)) {
+        echo "<p style='color: green; font-weight: bold;'>$message</p>";
+    }
+    ?>
     <table>
         <thead>
             <tr>
