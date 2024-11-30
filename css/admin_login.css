@@ -51,12 +51,6 @@ body {
     margin: 20px 0;
 }
 
-.sign-up-box p a{
-    text-decoration: none;
-    color: white;
-    font-size: 12px;
-}
-
 .sign-up-btn {
     background-color: transparent;
     border: 1px solid white;
@@ -105,6 +99,18 @@ body {
     font-size: 55px;
     padding-bottom: 20px;
 }
+
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* input[type="number"] {
+  -moz-appearance: textfield;
+} */
+
 
 .sign-in-btn {
     background-color: #21215E;
