@@ -73,7 +73,7 @@ $conn->close();
         <li><a href="php/destinationlist.php">Explore and Select destinations</a></li>
         <li><a href="Itinerary.php">Manage your Itinerary</a></li>
         <li><a href="php/feedback_report.php">Report and Feedback</a></li>
-        <li><a href="#">Profile Management</a></li>
+        <li><a href="php/profile_management.php">Profile Management</a></li>
       </ul>
     </div>
     <main class="main-content">
