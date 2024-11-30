@@ -22,14 +22,7 @@ body {
 
 /* Container */
 .container {
-    /* display: flex;
-    background-color: white;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
-    border-radius: 20px;
-    width: 95%;
-    max-width: 1200px;
-    min-height: 90vh;
-    overflow: hidden; */
+    
     display: flex;
     background-color: white;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
@@ -53,9 +46,7 @@ body {
 }
 
 .sidebar h2 {
-    /* margin-bottom: 30px;
-    font-size: 2rem;
-    text-align: center; */
+    
     margin-bottom: 40px;
     padding-top: 20px;
     font-size: 3vw;

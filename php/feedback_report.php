@@ -34,10 +34,10 @@ $resultItineraries = $stmtItin->get_result();
       <h2>Trip Tailor</h2>
       <h3>User Tools</h3>
       <ul class="user-tools">
-        <li><a href="destinationlist.php">Explore and Select Destinations</a></li>
+        <li><a href="../dashboard.php">Explore and Select Destinations</a></li>
         <li><a href="../Itinerary.php">Manage Your Itinerary</a></li>
         <li><a href="feedback_report.php">Report and Feedback</a></li>
-        <li><a href="#">Profile Management</a></li>
+        <li><a href="profile_management.php">Profile Management</a></li>
       </ul>
     </div>
     <main class="main-content">

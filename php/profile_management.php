@@ -40,7 +40,7 @@ if ($result->num_rows > 0) {
         <p><strong>Gender:</strong> <?php echo htmlspecialchars($user['Gender']); ?></p>
 
         <a href="edit_profile.php">Edit Profile</a>
-        <a href="javascript:history.back();" class="back-button">Back</a>
+        <a href="../dashboard.php" class="back-button">Back</a>
     </div>
 </body>
 </html>
