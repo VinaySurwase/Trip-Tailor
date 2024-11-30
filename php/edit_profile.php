@@ -50,6 +50,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <head>
     <title>Edit Profile</title>
     <link rel="stylesheet" type="text/css" href="../css/edit_profile.css">
+    <style>
+        body {
+            background-color: #e7f2f4;
+        }
+    </style>
 </head>
 <body>
     <div class="form-container">
