@@ -5,10 +5,8 @@ if (!isset($_SESSION['UserID'])) {
     header("Location: login.php");
     exit();
 }
-// Assuming UserID is stored in session after login
 $userId = $_SESSION['UserID'];
 
-// Query user preferences
 $userPrefQuery = "SELECT Pref_DestinationType FROM User WHERE UserID = $userId";
 $userPrefResult = $conn->query($userPrefQuery);
 $userPref = $userPrefResult->fetch_assoc()['Pref_DestinationType'];
@@ -35,7 +33,6 @@ $destinationResult = $conn->query($destinationQuery);
             box-sizing: border-box;
         }
 
-        /* Body Styling */
         body {
             font-family: Arial, sans-serif;
             background-color: #e7f2f4;
@@ -48,7 +45,6 @@ $destinationResult = $conn->query($destinationQuery);
             padding-bottom: 3%;
         }
 
-        /* Main Container */
         .container {
             display: flex;
             background-color: white;
@@ -60,7 +56,6 @@ $destinationResult = $conn->query($destinationQuery);
             overflow: hidden;
         }
 
-        /* Sidebar Styling */
         .sidebar {
             width: 25%;
             background-color: #21215E;
@@ -85,7 +80,6 @@ $destinationResult = $conn->query($destinationQuery);
         }
 
         .sidebar {
-            /* margin: 20px 0; */
             text-align: center;
         }
 
@@ -108,14 +102,12 @@ $destinationResult = $conn->query($destinationQuery);
             color: #21215E;
         }
 
-        /* Main Content Styling */
         .main-content {
             width: 75%;
             background-color: #ffffff;
             padding: 30px;
         }
 
-        /* Header Styling */
         header {
             margin-bottom: 20px;
         }
@@ -131,7 +123,6 @@ $destinationResult = $conn->query($destinationQuery);
             color: #555;
         }
 
-        /* Table Styling */
         table {
             width: 100%;
             border-collapse: collapse;
@@ -159,7 +150,6 @@ $destinationResult = $conn->query($destinationQuery);
             background-color: #e5f4f5;
         }
 
-        /* Button Styling */
         .select-btn {
             display:flex ;
             justify-self:center ;
@@ -173,7 +163,6 @@ $destinationResult = $conn->query($destinationQuery);
         }
 
         .select-btn:hover {
-            /* background-color: darkred; */
             color: #21215E;
         }
 
@@ -181,7 +170,6 @@ $destinationResult = $conn->query($destinationQuery);
             display: flex ;
             justify-self: end ;
             color: #21215E;
-            /* background-color: #21215E; */
             padding: 10px 20px;
             text-decoration: none;
             border-radius: 8px;
@@ -191,10 +179,8 @@ $destinationResult = $conn->query($destinationQuery);
 
         .btn-sort:hover {
             background-color: #EDF2FC;
-            /* text-decoration: underline ; */
         }
 
-        /* Responsive Design */
         @media (max-width: 1024px) {
             .container {
                 flex-direction: column;

@@ -1,18 +1,15 @@
 <?php
 session_start();
 
-// Check if the user is logged in
 if (!isset($_SESSION['UserID'])) {
-    header("Location: login.php"); // Redirect to login if not authenticated
+    header("Location: login.php"); 
     exit();
 }
 
-// Get UserID from the session
 $userId = $_SESSION['UserID'];
 
 
 include 'php/connection.php';
-// Fetch the user's name
 $stmt = $conn->prepare("SELECT Name FROM User WHERE UserID = ?");
 $stmt->bind_param("i", $userId);
 $stmt->execute();
@@ -34,7 +31,6 @@ $conn->close();
 
 <body>
     <div class="container">
-        <!-- Sidebar -->
         <div class="sidebar">
             <h2>Trip Tailor</h2>
             <h3>User Tools</h3>
@@ -47,7 +43,6 @@ $conn->close();
             </ul>
         </div>
 
-        <!-- Main Content -->
         <div class="main-content">
             <div class="destinations">
                 <div class="destination-card">
@@ -96,7 +91,6 @@ $conn->close();
                     </tbody>
                 </table>
 
-                <!-- Modal for selecting month and year -->
                 <div id="modal" class="modal">
                     <div class="modal-content">
                         <span id="close-modal">&times;</span>

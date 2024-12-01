@@ -23,7 +23,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $feedback = $_POST['Feedback'];
     $rating = $_POST['Rating'];
 
-    // Validate that the selected destination belongs to the user
     $validateSql = "
         SELECT 1 
         FROM itinerary i 
@@ -44,7 +43,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <div class='main-content'>";
 
     if ($validateResult->num_rows > 0) {
-        // Insert feedback into the database
         $insertSql = "
             INSERT INTO feedback (DestinationID, Description, Rating) 
             VALUES (?, ?, ?)";

@@ -1,5 +1,4 @@
 <?php
-// Start session to retrieve UserID or ensure the user is logged in
 session_start();
 if (!isset($_SESSION['UserID'])) {
     header("Location: ../Login.html");
@@ -21,7 +20,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit();
     }
 
-    // Check if the attraction already exists in the itinerary
     $checkQuery = "SELECT COUNT(*) as count FROM ItineraryAttraction WHERE ItineraryID = ? AND AttractionID = ?";
     $stmt = $conn->prepare($checkQuery);
     $stmt->bind_param("ii", $ItineraryID, $AttractionID);
@@ -31,7 +29,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt->close();
 
     if ($row['count'] > 0) {
-        // Attraction already exists, redirect with an error message
         header("Location: ../itineray_details.php?ItineraryID=$ItineraryID&error=AttractionAlreadyExists");
         exit();
     }

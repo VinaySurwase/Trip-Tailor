@@ -10,7 +10,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $dob = $_POST['dob'];
     $gender = $_POST['gender'];
 
-    // Prepare the SQL query
     $sql = "INSERT INTO `user`(`Name`, `Email`, `Password`, `Phone`, `age`, `gender`) VALUES (?,?,?,?,?,?)";
     $stmt = $conn->prepare($sql);
 
@@ -18,8 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->bind_param("ssssis", $name, $email, $password, $phone, $dob, $gender);
 
         if ($stmt->execute()) {
-            $_SESSION['UserID'] = $stmt->insert_id; // Store UserID in session
-            // Redirect to destinationType.html
+            $_SESSION['UserID'] = $stmt->insert_id; 
             header("Location: ../destinationType.html");
             exit();
         } else {

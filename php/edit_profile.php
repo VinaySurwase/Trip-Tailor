@@ -2,7 +2,6 @@
 session_start();
 include 'connection.php';
 
-// Check if the user is logged in
 if (!isset($_SESSION['UserID'])) {
     header("Location: login.php");
     exit();
@@ -10,7 +9,6 @@ if (!isset($_SESSION['UserID'])) {
 
 $userID = $_SESSION['UserID'];
 
-// Fetch user details to pre-fill the form
 $sql = "SELECT Name, Email, Phone FROM user WHERE UserID = ?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("i", $userID);
@@ -24,7 +22,6 @@ if ($result->num_rows > 0) {
     exit();
 }
 
-// Handle form submission
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $Name = $_POST['Name'];
     $Email = $_POST['Email'];
