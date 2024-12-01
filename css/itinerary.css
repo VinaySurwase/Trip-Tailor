@@ -115,6 +115,11 @@ header h1 {
 .new-journey:hover {
     background-color: #def5f7;
 }
+
+.new-journey a{
+    color: #4A6572;
+    text-decoration: none;
+}
   
 .travel-plans {
     display: grid;
@@ -166,4 +171,8 @@ header h1 {
     padding-bottom: 0.7vh;
     display: flex;
     align-content: flex-start;
+}
+
+.new-journey {
+    text-decoration: none; 
 }

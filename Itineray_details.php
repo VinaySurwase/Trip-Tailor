@@ -72,6 +72,18 @@ if (!empty($itineraryDetails)) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trip-tailor</title>
     <link rel="stylesheet" href="css/itinerary_details.css">
+    <style>
+        .remove-btn {
+            background: none;
+            color: #0957D0 ;
+            border: none ;
+            text-decoration: none ;
+        }
+
+        .remove-btn:hover {
+            color: red ;
+        }
+    </style>
 </head>
 
 <body>

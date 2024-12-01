@@ -61,6 +61,12 @@ $conn->close();
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Travel Plans</title>
   <link rel="stylesheet" href="css/itinerary.css">
+  <style>
+    .new-journey a{
+      color: #4A6572;
+      text-decoration: none;
+    }
+  </style>
 </head>
 
 <body>
