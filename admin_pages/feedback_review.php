@@ -1,6 +1,6 @@
 <?php
 // Database connection
-$servername = "localhost:3307";
+$servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "trip_tailor"; // Replace with your database name
