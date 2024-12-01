@@ -277,7 +277,7 @@ $conn->close();
     <div class="container">
         <!-- Sidebar -->
         <div class="sidebar">
-            <h2>Admin Dashboard</h2>
+            <h2>Trip-Tailor</h2>
             <ul class="user-tools">
                 <li><a href="manage_users.php">Manage Users</a></li>
                 <li><a href="reports.php">Manage Reports</a></li>
