@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Get the modal and its elements
     var modal = document.getElementById("myModal");
     var span = document.getElementsByClassName("close")[0];
     var modalTitle = document.getElementById("modal-title");
@@ -8,10 +7,8 @@ document.addEventListener("DOMContentLoaded", function () {
     var modalEntryFee = document.getElementById("modal-entry-fee");
     var removeBtn = document.querySelector(".remove-btn");
 
-    // Get all cards
     var cards = document.getElementsByClassName("card");
 
-    // Loop through the cards and add click event listeners
     for (var i = 0; i < cards.length; i++) {
         cards[i].onclick = function () {
             modalTitle.innerText = this.getAttribute("data-title");
@@ -22,19 +19,16 @@ document.addEventListener("DOMContentLoaded", function () {
         };
     }
 
-    // Close the modal when the user clicks on <span> (x)
     span.onclick = function () {
         modal.style.display = "none";
     };
 
-    // Close the modal when the user clicks outside it
     window.onclick = function (event) {
         if (event.target == modal) {
             modal.style.display = "none";
         }
     };
 
-    // Remove the current card when the remove button is clicked
     removeBtn.onclick = function () {
         var currentCardTitle = modalTitle.innerText;
         for (var i = 0; i < cards.length; i++) {

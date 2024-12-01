@@ -107,53 +107,15 @@ body {
     padding-bottom: 4px;
 }
 
-/* The Modal (background) */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.5);
+.remove-btn {
+    background: none;
+    color: #0957D0 ;
+    border: none ;
+    text-decoration: none ;
 }
 
-.modal-content {
-    background-color: white;
-    margin: 15% auto;
-    padding: 20px;
-    border-radius: 8px;
-    width: 50%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    position: relative;
-}
-
-.modal-content h2 {
-    margin: 0;
-    font-size: 24px;
-    font-weight: bold;
-}
-
-.modal-content p {
-    margin: 10px 0;
-    font-size: 16px;
-}
-
-.modal-content .remove-btn {
-    background-color: white;
-    color: #0957D0;
-    border: none;
-    padding: 10px;
-    border-radius: 30px;
-    cursor: pointer;
-    display: flex;
-    justify-self: end;
-}
-
-.modal-content .remove-btn:hover {
-    background-color: #EDF2FC;
+.remove-btn:hover {
+    color: red ;
 }
 
 .close {

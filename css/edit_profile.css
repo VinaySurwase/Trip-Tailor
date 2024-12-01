@@ -1,11 +1,9 @@
-/* Reset default margin, padding, and box-sizing */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Body styling */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     /* background-color: #e7f2f4; */
@@ -17,7 +15,6 @@ body {
     padding: 2%;
 }
 
-/* Form container styling */
 .form-container {
     background-color: #ffffff;
     padding: 30px 40px;
@@ -29,7 +26,6 @@ body {
     animation: fadeIn 0.4s ease-in-out;
 }
 
-/* Fade-in animation */
 @keyframes fadeIn {
     0% {
         opacity: 0;
@@ -41,7 +37,6 @@ body {
     }
 }
 
-/* Title styling */
 h2 {
     font-size: 2rem;
     color: #333;
@@ -49,7 +44,6 @@ h2 {
     font-weight: 600;
 }
 
-/* Form label styling */
 label {
     font-size: 1.1rem;
     color: #333;
@@ -58,7 +52,6 @@ label {
     margin-bottom: 8px;
 }
 
-/* Input field styling */
 input {
     width: 100%;
     padding: 12px;
@@ -77,7 +70,6 @@ input:focus {
     background-color: #fff;
 }
 
-/* Button styling */
 button {
     background-color: #21215e;
     color: white;
@@ -99,7 +91,6 @@ button:active {
     transform: translateY(1px);
 }
 
-/* Back button styling */
 .back-button {
     display: inline-block;
     margin-top: 20px;
@@ -123,7 +114,6 @@ button:active {
     transform: scale(1);
 }
 
-/* Paragraph for success message */
 h3 {
     font-size: 1.2rem;
     color: #4caf50;
@@ -131,7 +121,6 @@ h3 {
     font-weight: bold;
 }
 
-/* Responsive styling for small devices */
 @media (max-width: 480px) {
     .form-container {
         padding: 20px;
