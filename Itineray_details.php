@@ -15,6 +15,7 @@ if (!isset($_GET['ItineraryID'])) {
 
 $ItineraryID = intval($_GET['ItineraryID']);
 
+
 // Query to fetch itinerary details and associated attractions
 $sql = "
     SELECT 
@@ -22,7 +23,8 @@ $sql = "
         i.StartDate,
         i.EndDate,
         a.AttractionName,
-        a.Description
+        a.Description,
+        a.AttractionID
     FROM 
         Itinerary i
     JOIN 
@@ -53,34 +55,64 @@ if (!empty($itineraryDetails)) {
     $destinationName = $itineraryDetails[0]['DestinationName'];
     $startDate = date("d-m-Y", strtotime($itineraryDetails[0]['StartDate']));
     $endDate = date("d-m-Y", strtotime($itineraryDetails[0]['EndDate']));
+    $attractionIDs = array_column($itineraryDetails, 'AttractionID');
 } else {
     echo "No attractions found for the selected itinerary.";
     exit();
 }
+
+
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trip-tailor</title>
     <link rel="stylesheet" href="css/itinerary_details.css">
 </head>
+
 <body>
     <div class="container">
         <button class="back-btn" onclick="window.history.back();">BACK</button>
         <h1 class="title"><?= htmlspecialchars($destinationName) ?></h1>
         <p class="date-range"><?= htmlspecialchars($startDate) ?> to <?= htmlspecialchars($endDate) ?></p>
-        <button class="add-new-btn">Add New</button>
+        <button class="add-new-btn" onclick="window.location.href='php/add_attraction.php?ItineraryID=<?= htmlspecialchars($ItineraryID) ?>'">Add New</button>
+
+
         <div class="card-list">
             <?php foreach ($itineraryDetails as $attraction): ?>
                 <div class="card">
                     <h2><?= htmlspecialchars($attraction['AttractionName']) ?></h2>
                     <p><?= htmlspecialchars($attraction['Description']) ?></p>
+                    <form method="POST" action="php/remove_attractions.php">
+                        <input type="hidden" name="ItineraryID" value="<?= htmlspecialchars($ItineraryID) ?>">
+                        <input type="hidden" name="AttractionID" value="<?= htmlspecialchars($attraction['AttractionID']) ?>">
+                        <button type="submit" class="remove-btn">Remove</button>
+                    </form>
                 </div>
             <?php endforeach; ?>
+
         </div>
+
+        <?php
+        if (isset($_GET['error'])) {
+            if ($_GET['error'] === 'AttractionAlreadyExists') {
+                echo "<p style='color: red;'>This attraction is already in your itinerary.</p>";
+            }
+        }
+
+        if (isset($_GET['success'])) {
+            if ($_GET['success'] === 'AttractionAdded') {
+                echo "<p style='color: green;'>Attraction added successfully!</p>";
+            }
+        }
+        ?>
+
+
     </div>
 </body>
+
 </html>
