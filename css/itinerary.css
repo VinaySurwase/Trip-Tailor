@@ -167,3 +167,7 @@ header h1 {
     display: flex;
     align-content: flex-start;
 }
+
+.new-journey {
+    text-decoration: none; 
+}
