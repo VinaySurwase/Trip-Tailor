@@ -22,6 +22,7 @@ if (isset($_GET['delete'])) {
         $message = "Error deleting user: " . $conn->error;
     }
 }
+
 // Fetch all users
 $query = "SELECT UserID, Name, Email, Pref_DestinationType, Pref_ActivityType FROM User";
 $result = $conn->query($query);
@@ -29,7 +30,6 @@ $result = $conn->query($query);
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -41,7 +41,6 @@ $result = $conn->query($query);
             box-sizing: border-box;
         }
 
-        /* Body Styling */
         body {
             font-family: Arial, sans-serif;
             background-color: #e7f2f4;
@@ -66,7 +65,7 @@ $result = $conn->query($query);
             overflow: hidden;
         }
 
-        /* Sidebar Styling */
+        /* Sidebar */
         .sidebar {
             width: 25%;
             background-color: #21215E;
@@ -84,18 +83,23 @@ $result = $conn->query($query);
             text-align: center;
         }
 
-        .sidebar .user-tools {
+        .user-tools {
             list-style: none;
-            width: 100%;
             padding: 0;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
-        .sidebar .user-tools li {
+        .user-tools li {
             margin: 20px 0;
-            text-align: center;
+            width: 100%;
+            display: flex;
+            justify-content: center;
         }
 
-        .sidebar .user-tools li a {
+        .user-tools li a {
             background-color: transparent;
             border: 1px solid white;
             color: white;
@@ -105,23 +109,25 @@ $result = $conn->query($query);
             font-weight: lighter;
             text-decoration: none;
             font-size: 1.15vw;
+            text-align: center;
             width: 80%;
-            display: inline-block;
+            display: block;
         }
 
-        .sidebar .user-tools li a:hover {
+        .user-tools li a:hover {
             background-color: white;
-            color: #21215E;
+            color: #2e2c72;
+            text-decoration: none;
         }
 
-        /* Main Content Styling */
+        /* Main Content */
         .main-content {
             width: 75%;
             background-color: #ffffff;
             padding: 30px;
         }
 
-        /* Header Styling */
+        /* Header */
         header {
             margin-bottom: 20px;
         }
@@ -165,7 +171,6 @@ $result = $conn->query($query);
             background-color: #e5f4f5;
         }
 
-        /* Button Styling */
         .btn-delete {
             color: white;
             background-color: red;
@@ -177,7 +182,6 @@ $result = $conn->query($query);
 
         .btn-delete:hover {
             background-color: darkred;
-            color: white;
         }
 
         /* Responsive Design */
@@ -212,47 +216,61 @@ $result = $conn->query($query);
         }
     </style>
 </head>
-
 <body>
-    <h1>Manage Users</h1>
-    <?php
-    // Show delete message
-    if (isset($message)) {
-        echo "<p style='color: green; font-weight: bold;'>$message</p>";
-    }
-    ?>
-    <table>
-        <thead>
-            <tr>
-                <th>User ID</th>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Preferred Destination</th>
-                <th>Preferred Activity</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php
-            if ($result->num_rows > 0) {
-                while ($row = $result->fetch_assoc()) {
-                    echo "<tr>";
-                    echo "<td>" . $row['UserID'] . "</td>";
-                    echo "<td>" . $row['Name'] . "</td>";
-                    echo "<td>" . $row['Email'] . "</td>";
-                    echo "<td>" . $row['Pref_DestinationType'] . "</td>";
-                    echo "<td>" . $row['Pref_ActivityType'] . "</td>";
-                    echo "<td><a class='btn-delete' href='manage_users.php?delete=" . $row['UserID'] . "'>Delete</a></td>";
-                    echo "</tr>";
-                }
-            } else {
-                echo "<tr><td colspan='6'>No users found.</td></tr>";
-            }
-            ?>
-        </tbody>
-    </table>
-</body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <h2>Trip-Tailor</h2>
+            <ul class="user-tools">
+                <li><a href="admin_management.php">Manage Admins</a></li>
+                <li><a href="#">Manage Users</a></li>
+            </ul>
+        </div>
 
+        <!-- Main Content -->
+        <div class="main-content">
+            <header>
+                <h1>Manage Users</h1>
+                <p>View and manage registered users.</p>
+                <?php
+                if (isset($message)) {
+                    echo "<p style='color: green; font-weight: bold;'>$message</p>";
+                }
+                ?>
+            </header>
+            <table>
+                <thead>
+                    <tr>
+                        <th>User ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Preferred Destination</th>
+                        <th>Preferred Activity</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    if ($result->num_rows > 0) {
+                        while ($row = $result->fetch_assoc()) {
+                            echo "<tr>";
+                            echo "<td>" . $row['UserID'] . "</td>";
+                            echo "<td>" . $row['Name'] . "</td>";
+                            echo "<td>" . $row['Email'] . "</td>";
+                            echo "<td>" . $row['Pref_DestinationType'] . "</td>";
+                            echo "<td>" . $row['Pref_ActivityType'] . "</td>";
+                            echo "<td><a class='btn-delete' href='manage_users.php?delete=" . $row['UserID'] . "'>Delete</a></td>";
+                            echo "</tr>";
+                        }
+                    } else {
+                        echo "<tr><td colspan='6'>No users found.</td></tr>";
+                    }
+                    ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
 </html>
 
 <?php
