@@ -5,6 +5,112 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/admincss/admin_dashboard.css">
     <title>Admin Dashboard</title>
+    <style>
+        .main-content .card {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 35%; 
+            height: 150px; 
+            /* background-color: #f8f9fa;  */
+            border-radius: 15px; 
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+            margin: 15px; 
+            transition: transform 0.3s ease, box-shadow 0.3s ease; 
+        }
+
+        .main-content .card .User {
+            width: 100%;
+            height: 100%;
+            background-color: #F5F3FF ;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 15px; 
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+        }
+
+        .main-content .card .Admin {
+            width: 100%;
+            height: 100%;
+            background-color: #EEF2FF ;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 15px; 
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+        }
+
+        .main-content .card .Feedback {
+            width: 100%;
+            height: 100%;
+            background-color: #FAF7F5 ;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 15px; 
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+        }
+
+
+        .main-content .card .Report {
+            width: 100%;
+            height: 100%;
+            background-color: #F3FAF1 ;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 15px; 
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+        }
+
+
+        .main-content .card .Destination {
+            width: 100%;
+            height: 100%;
+            background-color: #FFF6F1 ;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 15px; 
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+        }
+
+        .main-content .card:hover {
+            transform: translateY(-5px); 
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); 
+        }
+
+        .main-content .card div {
+            font-size: 1.2rem; 
+            font-weight: bold;
+            color: #21215e; 
+            text-align: center;
+        }
+
+        .main-content .card div a {
+            text-decoration: none;
+            color: inherit; 
+        }
+
+        .main-content .card div a:hover {
+            color: #2e2c72; 
+        }
+
+        .main-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px; 
+            padding: 20px;
+            width: 75%;
+            background-color: #ffffff;
+        }
+
+        .container {
+            height: 90vh ;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -21,6 +127,33 @@
         </div>
 
         <!-- Main Content -->
+        <div class="main-content">
+            <div class="card">
+                <div class="Admin">
+                    <a href="admin_management.php">Admin</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="Destination">
+                    <a href="manage_destinations.php">Destinations and Attractions</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="User">
+                    <a href="manage_users.php">Users</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="Feedback">
+                    <a href="feedback_review.php">Feedback</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="Report">
+                    <a href="reports.php">Report</a>
+                </div>
+            </div>
+        </div>
     </div>
 
 </body>
