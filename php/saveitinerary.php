@@ -15,7 +15,6 @@ if (isset($_SESSION['itineraryId'])) {
     echo "Itinerary saved successfully!";
     header("Location: ../dashboard.php");
     exit();
-    // Use $itineraryId for any operations
 } else {
     die("Error: Itinerary ID not found.");
 }

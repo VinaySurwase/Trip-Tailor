@@ -1,11 +1,9 @@
-/* General Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Body Styling */
 body {
     font-family: Arial, sans-serif;
     background-color: #e7f2f4;
@@ -17,7 +15,6 @@ body {
     padding: 0;
 }
 
-/* Container Styling */
 .profile-container {
     background-color: white;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
@@ -58,7 +55,6 @@ body {
     background-color: #007bff;
     transform: scale(1.05);
 }
-/* Back Button Styling */
 .back-button {
     display: inline-block;
     margin-top: 20px;
@@ -78,7 +74,6 @@ body {
     transform: scale(1.05);
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
     .profile-container {
         width: 80%;

@@ -1,21 +1,18 @@
 <?php
-// Start session to retrieve UserID (ensure user is logged in)
 session_start();
 if (!isset($_SESSION['UserID'])) {
   header("Location: login.php");
   exit();
 }
 
-$UserID = $_SESSION['UserID']; // Assuming UserID is stored in session after login
+$UserID = $_SESSION['UserID'];
 
 include 'php/connection.php';
 
-// Check connection
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-// SQL query to fetch itineraries with expected cost
 $sql = "
     SELECT 
         i.ItineraryID,

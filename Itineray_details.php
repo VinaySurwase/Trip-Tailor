@@ -1,5 +1,4 @@
 <?php
-// Start session to retrieve UserID or ensure the user is logged in
 session_start();
 if (!isset($_SESSION['UserID'])) {
     header("Location: login.php");
@@ -7,7 +6,6 @@ if (!isset($_SESSION['UserID'])) {
 }
 include 'php/connection.php';
 
-// Get ItineraryID from URL parameter
 if (!isset($_GET['ItineraryID'])) {
     echo "Itinerary ID not provided.";
     exit();
@@ -16,7 +14,6 @@ if (!isset($_GET['ItineraryID'])) {
 $ItineraryID = intval($_GET['ItineraryID']);
 
 
-// Query to fetch itinerary details and associated attractions
 $sql = "
     SELECT 
         d.DestinationName,
@@ -50,7 +47,6 @@ while ($row = $result->fetch_assoc()) {
 $stmt->close();
 $conn->close();
 
-// Extract common itinerary data (DestinationName, StartDate, EndDate)
 if (!empty($itineraryDetails)) {
     $destinationName = $itineraryDetails[0]['DestinationName'];
     $startDate = date("d-m-Y", strtotime($itineraryDetails[0]['StartDate']));

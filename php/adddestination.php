@@ -10,7 +10,7 @@ $conn->query($insertQuery);
 $itineraryId = $conn->insert_id;
 
 if ($itineraryId) {
-    $_SESSION['itineraryId'] = $itineraryId; // Store in session
+    $_SESSION['itineraryId'] = $itineraryId; 
     header("Location: attractionlist.php?destinationId=$destinationId"); // Redirect to the next page
     exit();
 } else {
